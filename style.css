@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  font-size: 2rem;
+}
+
+.item-1 {
+  background-color: #d3c6b8;
+}
+
+.item-2 {
+  background-color: #88847f;
+}
+
+.item-3 {
+  background-color: #374840;
+}
+
+.item-4 {
+  background-color: #376a54;
+}
+
+.item-5 {
+  background-color: #d6d4d3;
+}
+
+.item-6 {
+  background-color: #516464;
+}
+
+.item-7 {
+  background-color: #cfdbdb;
+}
+
+.item-8 {
+  background-color: #b09c98;
+}
+
+.item-9 {
+  background-color: #ddc5af;
+}
+
+/* Lecture 1: introduction to CSS Grid
+grid-template-rows, grid-template-column & grid-row-gap, grid-column-gap also grid-gap 
+ row and column Line numbers starts with 1 */
+
+.container {
+  width: 1200px;
+  background: #efedec;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+  grid-template-columns: 400px 400px 400px;
+  grid-row-gap: 5rem;
+  grid-column-gap: 5rem;
+  grid-gap: 5rem;
+}
+
+/*! ------------------------------- 2nd video ------------------------------------------- */
+
+/* Lecture 2: How Repeat & FR makes our life easy? 
+Many use of 1fr 
+1: to take the whole space
+grid-template-columns: repeat(2, 300px) 1fr;
+2: give equal space to all
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: repeat(3, 1fr);
+
+3:no need of writing min-width 
+4: what is 2fr or 3fr
+task: 2column must be 2times of 1st column and 3rd column must be 3times of 1st column
+grid-template-columns: 1fr 2fr 3fr;
+*/
+
+.container {
+  width: 1200px;
+  background: #efedec;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  display: grid;
+  grid-template-rows: repeat(3, 200px);
+  /* //change to 100 for proof */
+  grid-template-columns: 1fr 2fr 3fr;
+  grid-gap: 5rem;
+  border: 2px solid rgb(97, 97, 97);
+}
+
+/*! ------------------------------- 3rd video ------------------------------------------- */
+
+/* How to Position the grid Items  
+1: item1 in place of item3 and vice-versa it will take more works 
+2: After that item1 in itme9 place
+
+*/
+
+/* .container {
+  width: 1200px;
+  background: #efedec;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  display: grid;
+  grid-template-rows: repeat(3, 200px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5rem;
+  border: 2px solid rgb(97, 97, 97);
+}
+
+.item-1 {
+  /* grid-row-start: 3;
+  grid-row-end: 4; */
+/* grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.item-2 { */
+/* grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3; */
+/* grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.item-3 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}  */
+
+/*! ------------------------------- 4th video ------------------------------------------- */
+/* what is grid area ?
+This property is a shorthand for the following CSS properties:
+
+grid-row-start
+grid-column-start
+grid-row-end
+grid-column-end
+
+
+*/
+
+/* .container {
+  width: 1200px;
+  background: #efedec;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  display: grid;
+  grid-template-rows: repeat(3, 200px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5rem;
+  border: 2px solid rgb(97, 97, 97);
+} */
+
+/* .item-1 { */
+/* grid-row-start: 3;
+  grid-row-end: 4; */
+/* grid-column-start: 3;
+  grid-column-end: 4;
+} */
+
+/* .item-2 { */
+/* grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3; */
+/* grid-row: 1/2;
+  grid-column: 2/3; */
+
+grid-area: 1/2/2/3;
+
+/* extra 1/2/3/3
+/* } */
+
+/* .item-3 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+} */
+
+/*! ------------------------------- 5th video ------------------------------------------- */
+/* mutliple grid items in the same cell  and then we can use z-index 
+There are 3ways of doing it. 
+1: the normal by giving the row and column line numbers. 
+item 2 ke sath :  grid-area: 1/2/2/4;
+2: By using the span keyword. 
+3: By using the -1 value to occupy the space till the end. 
+*/
+
+.container {
+  width: 1200px;
+  background: #efedec;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  display: grid;
+  grid-template-rows: repeat(3, 200px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5rem;
+  border: 2px solid rgb(97, 97, 97);
+}
+
+.item-1 {
+  /* grid-row-start: 3;
+  grid-row-end: 4; */
+  /* grid-column-start: 3;
+  grid-column-end: 4; */
+
+  /* grid-area: 2/1/3/4; */
+  /* //it is actually not advisable to use bcx of it complexity */
+
+  grid-row: 2/3;
+  grid-column: 1 / span 5;
+  /* for extra info go with 5 to show that two extra column is created  */
+  /* Now finally we can show them that we can use -1   */
+
+  grid-column: 1 / -1;
+
+  z-index: 99;
+}
+
+.item-2 {
+  /* grid-row: 1/2;
+  grid-column: 2/3; */
+
+  grid-area: 1/2/2/4;
+  /* extra 1/2/3/3 */
+}
+
+.item-3 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}

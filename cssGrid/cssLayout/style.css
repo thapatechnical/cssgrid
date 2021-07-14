@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 62.5%; */
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 1200px;
+  /* height: 800px; */
+  background-color: #eeeeee;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px 200px 200px 100px;
+  grid-gap: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+nav {
+  background: #d3c6b8;
+  grid-column: 1/-1;
+}
+
+aside {
+  background: #b09c98;
+  grid-row: 2 / span 2;
+}
+
+.box1 {
+  background: #d3c6b8;
+}
+
+.box2 {
+  background: #d3c6b8;
+}
+
+.box3 {
+  background: #d3c6b8;
+}
+
+.main-content {
+  background: #b09c98;
+  grid-column: 2 / -1;
+  grid-row: 3/4;
+}
+
+footer {
+  background: #d3c6b8;
+  grid-row: 4 / span 1;
+  grid-column: 1 / -1;
+}
